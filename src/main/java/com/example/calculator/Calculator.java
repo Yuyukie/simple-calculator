@@ -18,9 +18,10 @@ public class Calculator {
         double result = calculate(num1, num2, operator);
         System.out.println("Le résultat est : " + result);
 
+        scanner.close();
     }
 
-    public static double calculate (double num1, double num2 char operator) {
+    public static double calculate(double num1, double num2, char operator) {
         switch(operator) {
             case '+':
                 return num1 + num2;
@@ -36,9 +37,6 @@ public class Calculator {
                 }
             default:
                 throw new IllegalArgumentException("Opérateur invalide");
-                
         }
     }
-
-
 }

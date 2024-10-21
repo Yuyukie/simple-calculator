@@ -1,7 +1,7 @@
 package com.example.calculator;
 
-import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CalculatorTest {
 
@@ -25,8 +25,8 @@ public class CalculatorTest {
         assertEquals(2.0, Calculator.calculate(6, 3, '/'), 0.001);
     }
 
-    @Test(expected = ArithmeticException.class)
+    @Test
     public void testDivisionByZero() {
-        Calculator.calculate(1, 0, '/');
+        assertThrows(ArithmeticException.class, () -> Calculator.calculate(1, 0, '/'));
     }
 }
